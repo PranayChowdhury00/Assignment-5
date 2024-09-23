@@ -13,6 +13,14 @@ function balanceSet(b,input){
     let nowBalanceHave = balanceHaveNowText - input;
     balanceHaveNow.innerText = nowBalanceHave;
 }
+
+//common function 2
+function sum(first,second,donatHaveInCard){
+    let sumOfTwo = first+second;
+    donatHaveInCard.innerText = sumOfTwo;
+    
+
+}
 //
 
 //noakhaliDonate
@@ -27,9 +35,13 @@ noakhaliDonateButton.addEventListener('click',function(){
    
     if( noakhaliInputIdValue > 0 && !isNaN(noakhaliInputIdValue) ){
         myModal1.showModal();
+       
         let noakhaliDonateHaveText =parseFloat( noakhaliDonateHave.innerText);
-    let totalNokhaliHave= noakhaliDonateHaveText + noakhaliInputIdValue;
-    noakhaliDonateHave.innerText = totalNokhaliHave;
+    // let totalNokhaliHave= noakhaliDonateHaveText + noakhaliInputIdValue;
+    // noakhaliDonateHave.innerText = totalNokhaliHave;
+    sum(noakhaliDonateHaveText,noakhaliInputIdValue,noakhaliDonateHave);
+
+   
     balanceSet(balanceHaveNow,noakhaliInputIdValue);
     let div = document.createElement('div');
     div.className = 'max-w-screen-lg mx-auto shadow-2xl w-full h-24 rounded-lg p-4 mt-5';
@@ -56,19 +68,14 @@ let feniInputs = document.getElementById('feniInput');
 let feniSubmitButton = document.getElementById('feniSubmitBtn');
 let feniDonetedMoney = document.getElementById('feniDoneteMoney');
 let myModal2=document.getElementById('my_modal_2');
+
 feniSubmitButton.addEventListener('click',function(){
     let feniInputsValue = parseFloat( feniInputs.value);
     if(feniInputsValue >0 && !isNaN(feniInputsValue) ){
         myModal2.showModal();
     let feniDonetedMoneyHave =parseFloat( feniDonetedMoney.innerText);  
-
-    let nowFneniHave = feniDonetedMoneyHave + feniInputsValue;
-    console.log(nowFneniHave);
-    feniDonetedMoney.innerText = nowFneniHave;
-
+    sum(feniDonetedMoneyHave,feniInputsValue,feniDonetedMoney);
     balanceSet(balanceHaveNow,feniInputsValue);
-    
-
     let div = document.createElement('div');
     div.className = 'max-w-screen-lg mx-auto shadow-2xl w-full h-24 rounded-lg p-4 mt-5';
        div.innerHTML = `
@@ -97,11 +104,8 @@ freedomFighterBtn.addEventListener('click',function(){
     if(freedomFighterInput>0 && !isNaN(freedomFighterInput )){
         myModal3.showModal();
     let freedomFighterHaveMoney =parseFloat( document.getElementById('freedomfighterhavemoney').innerText);
-    let freedomFighterHaveMoneyNow = freedomFighterHaveMoney + freedomFighterInput;
-  
-
-    document.getElementById('freedomfighterhavemoney').innerText = freedomFighterHaveMoneyNow;
-
+    let freedomfighterhavemoneyIn = document.getElementById('freedomfighterhavemoney')
+    sum(freedomFighterHaveMoney,freedomFighterInput,freedomfighterhavemoneyIn)
     balanceSet(balanceHaveNow,freedomFighterInput);
     
      let div = document.createElement('div');
