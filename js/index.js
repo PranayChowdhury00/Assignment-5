@@ -111,7 +111,7 @@ freedomFighterBtn.addEventListener('click',function(){
      let div = document.createElement('div');
      div.className = 'max-w-screen-lg mx-auto shadow-2xl w-full h-24 rounded-lg p-4 mt-5';
         div.innerHTML = `
-        <h1 class="text-[20px] font-semibold text-[#111111]">${freedomFighterInput} Taka is Donated for famine-2024 at quta,</h1>
+        <h1 class="text-[20px] font-semibold text-[#111111]">${freedomFighterInput}  Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</h1>
         <p class="text-[16px] font-normal text-gray-400">Date:${new Date().toLocaleDateString()} (Bangladesh Standard Time)</p>
         `;
        let historyOfFreedomFighter =  document.getElementById('historyOfFreedomFighter')
